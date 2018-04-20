@@ -1,0 +1,171 @@
+body{
+  margin:0;
+}
+
+#wrapper{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+  grid-template-areas:
+  "header header header header"
+  "main main main sidebar"
+  
+}
+
+#header{
+  grid-area: header;
+  
+}
+#sidebar{
+  grid-area:sidebar;
+}
+#main{
+  grid-area:main;
+}
+
+
+#header{
+  
+  background-color:black;
+  padding:20px 0;
+  min-height:70px;
+  
+  
+}
+
+
+#wrapper #header ul li a{
+  color:white;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size:16px;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  
+}
+
+#header li{
+  float:left;
+  display:inline;
+  padding: 0 15px 0 15px;
+  
+}
+
+#header #brand{
+  float:left;
+}
+
+#header #brand h1{
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  margin:10px;
+  color:white;
+}
+
+#header nav{
+  float:right;
+  margin-top:10px;
+}
+
+#header .Cristina, header .actual a{
+  color:white;
+  font-weight:bold;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+#header a:hover{
+  color:#696969;
+  font-weight:bold;
+}
+
+#wrapper #main{
+  margin:20px;
+}
+
+h1, h2, h3{
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+
+.clear {
+  clear: both;
+}
+
+.error {
+  padding: 0.75em;
+  margin: 0.75em;
+  border: 1px solid #990000;
+  max-width: 400px;
+  color: #990000;
+  background-color: #FDF0EB;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+}
+
+p,li {
+  color: #696969;
+  font-size: 16px;
+  line-height: 1.5em;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+a {
+  color: #696969;
+  text-decoration: none;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+
+/* PAGINATION */
+
+.pagination {
+    clear: both;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.pagination a {
+   border: 1px solid #D5D5D5;
+    color: #666666;
+    font-size: 11px;
+    font-weight: bold;
+    height: 25px;
+    padding: 4px 8px;
+    text-decoration: none;
+  margin:2px;
+}
+.pagination a:hover, .pagination a:active {
+    background:#efefef;
+}
+.pagination span.current {
+    background-color: #687282;
+    border: 1px solid #D5D5D5;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    height: 25px;
+    padding: 4px 8px;
+    text-decoration: none;
+        margin:2px;
+}
+.pagination span.disabled {
+    border: 1px solid #EEEEEE;
+    color: #DDDDDD;
+    margin: 2px;
+    padding: 2px 5px;
+}
+
+@media screen and (max-width:700px) {
+  #wrapper{
+    grid-template-areas:
+    "header header"
+    "main main"
+    "sidebar sidebar";
+  }
+}
+
+@media screen and(max-width:500px) {
+  #wrapper{
+    grid-template-areas:
+    "header header"
+    "main main"
+    "sidebar sidebar";
+  }
+}
