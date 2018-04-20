@@ -1,0 +1,49 @@
+<h2>Recent Posts</h2>
+<hr/>
+
+<ul>
+<?php
+$stmt = $db->query('SELECT postTitle, postSlug FROM blog_posts_seo ORDER BY postID DESC LIMIT 5');
+while($row = $stmt->fetch()){
+	echo '<li><a href="'.$row['postSlug'].'">'.$row['postTitle'].'</a></li>';
+}
+?>
+</ul>
+
+<h2>Catgories</h2>
+<hr />
+
+<ul>
+<?php
+$stmt = $db->query('SELECT catTitle, catSlug FROM blog_cats ORDER BY catID DESC');
+while($row = $stmt->fetch()){
+	echo '<li><a href="c-'.$row['catSlug'].'">'.$row['catTitle'].'</a></li>';
+}
+?>
+</ul>
+
+<h2>Archives</h2>
+<hr />
+
+<ul>
+<?php
+$stmt = $db->query("SELECT Month(postDate) as Month, Year(postDate) as Year FROM blog_posts_seo GROUP BY Month(postDate), Year(postDate) ORDER BY postDate DESC");
+while($row = $stmt->fetch()){
+	$monthName = date("F", mktime(0, 0, 0, $row['Month'], 10));
+	$slug = 'a-'.$row['Month'].'-'.$row['Year'];
+	echo "<li><a href='$slug'>$monthName</a></li>";
+}
+?>
+</ul>
+
+
+<div class="gallery">
+	<h2>Gallery</h2>
+	<hr/>
+	  <ul>
+        <li> <a href="project1.php">Projects</a></li>
+        <li><a href="sfx.php">SFX Make-up</a></li>
+     
+         
+      </ul>
+</div>
